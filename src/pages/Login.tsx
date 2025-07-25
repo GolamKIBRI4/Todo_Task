@@ -1,8 +1,10 @@
-
+import PageLayout from "../components/PageLayout"
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <PageLayout>
+      <p style={{ color: "red" }}>Login</p>
+    </PageLayout>
   )
 }
 

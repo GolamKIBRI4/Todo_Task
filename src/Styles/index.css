@@ -1,0 +1,266 @@
+.navBar-content{
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items:center; 
+ 
+    margin-top: -5px;
+    
+  }
+  .navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--navbar-height);
+    z-index: 1000;
+    background-color: #101840;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+    
+  }
+.navBar ul{
+  padding:10px 30px;
+  border-radius: 30px;
+  background-color: #6E62B6;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
+}
+
+.navBar ul li{
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 10px;
+ 
+}
+a.active{
+  color: #10261E;
+}
+
+.navBar button{
+  background: #000;
+ color: #fff;
+ padding: 13px 25px;
+ border: 0;
+ outline: 0;
+ border-radius: 35px;
+ font-size: 16px;
+ cursor: pointer;
+ box-shadow:   0 0 30px 0 rgba(0,0,0,0.1);
+
+}
+
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    
+  }
+
+
+
+.container.h1{
+  font-size: 70px;
+  font-weight: 500;
+}
+.contact_button{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  gap: 20px;
+  margin-top: 30%;
+
+  
+  
+  
+}
+.contact_button button{
+  background: #000;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  padding: 10px 15px;
+  margin-top: 5px;
+  border-radius: 12px;
+  cursor: pointer;
+  
+} 
+.jobs{
+  padding: 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap:20px
+}
+
+.jobs a{
+  text-decoration: none;
+  flex: 1;
+  padding: 10px;
+  background: #efefef;
+  color: #000;
+}
+.jobDetails{
+  padding: 50px 0;
+  
+}
+.jobDetails p{
+  max-width: 800px;
+  padding: 10px 0;
+
+
+}
+.jobDetails button{
+  background: #000;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+
+.contactForm {
+  max-width: 600px;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.contactForm input,
+.contactForm textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  width: 100%;
+  resize: none;
+  font-family: inherit;
+}
+
+.contactForm textarea {
+  min-height: 120px;
+}
+
+.contactForm button {
+  background: #000;
+  color: #fff;
+  padding: 12px 25px;
+  border: 0;
+  outline: 0;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+  transition: background 0.3s ease;
+  margin: auto;
+}
+
+.contactForm button:hover {
+  background: #333;
+}
+.contact-container{
+  display: flex;
+  flex-direction: row;
+  padding: 5%;
+  
+}
+
+.btn{
+
+  background: #000;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+
+}
+
+
+
+
+
+:root {
+  --navbar-height: 70px; /* Adjust to your .navBar height */
+}
+
+/* Make sure body doesn't scroll */
+body, html, #root {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout below NavBar */
+.page-layout {
+  flex: 1; /* take all remaining space below navbar */
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--navbar-height); /* push below navbar */
+  background-color: #000;
+  overflow: hidden;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  background-color: #000;
+}
+
+
+/* Sidebar (Aside) */
+.sidebar {
+  width: 250px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+  align-items: center;
+  padding: 15%;
+}
+
+/* Optional Responsive Behavior */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    order: 2;
+  }
+
+  .main-content {
+    order: 1;
+  }
+}

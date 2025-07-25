@@ -1,8 +1,11 @@
-
+import PageLayout from "../components/PageLayout"
 
 const Register = () => {
   return (
-    <div>Register</div>
+    <PageLayout>
+      
+      <p style={{ color: "red" }}>Register</p>
+    </PageLayout>
   )
 }
 

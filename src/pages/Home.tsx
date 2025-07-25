@@ -1,9 +1,10 @@
-
-
+import PageLayout from "../components/PageLayout";
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <PageLayout>
+      <p style={{ color: "red" }}>Home</p>
+    </PageLayout>
+  );
+};
 
-export default Home
+export default Home;

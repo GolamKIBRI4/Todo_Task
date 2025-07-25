@@ -1,6 +1,6 @@
 import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
-import Login from "./pages/login";
+import Login from "./pages/Login";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -8,7 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Register from "./pages/Register";
-import UserHomeLayout from "./layouts/UserHomeLayout";
+
 
 function App() {
   const router = createBrowserRouter(
@@ -16,10 +16,9 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="userhome" element={<UserHomeLayout />} >
-        <Route index element={<Home />} />
-        </Route>
-       </Route>
+
+        <Route path="userhome" element={<Home />} />
+      </Route>
     )
   );
 
