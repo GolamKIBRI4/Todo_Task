@@ -1,9 +1,11 @@
 import PageLayout from "../components/PageLayout"
+import LoginForm from "../components/LoginForm"
 
 const Login = () => {
   return (
     <PageLayout>
-      <p style={{ color: "red" }}>Login</p>
+      
+        <LoginForm />
     </PageLayout>
   )
 }
