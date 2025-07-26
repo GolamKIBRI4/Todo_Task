@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "../features/todo/todoSlice";
 import { Todo } from "../types/interfaces";
 import TodoList from "./TodoList";
+import { toast } from "sonner";
+
 
 const createEmptyTodo = (): Todo => ({
   id: Math.random().toString(36).substring(2, 15),
@@ -22,13 +24,17 @@ const Todos = () => {
   const toggleFormVisibility = () => setFormVisibility(!formvisibility);   
 
   const addTodoHandler = (event: FormEvent) => {
+
+   
+
     event.preventDefault();
     if (!input.title.trim()) {
-      alert("Todo title is required");
+      toast.warning("Please enter a todo");
       return;
     }
     dispatch(addTodo(input));
-    alert("Todo added successfully");
+     toast.success("new todo added")
+    
     
     setInput(createEmptyTodo()); // reset with a new ID for next todo
   };

@@ -1,21 +1,40 @@
+"use client";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { removeTodo, editTodo } from "../features/todo/todoSlice";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const TodoList = () => {
   const todos = useSelector((state: RootState) => state.todos);
   const dispatch = useDispatch();
-  const [editTodoFormVisibility, setEditTodoFormVisibility] = useState<string | null>(null);
+  const [editTodoFormVisibility, setEditTodoFormVisibility] = useState<
+    string | null
+  >(null);
   const [editTitle, setEditTitle] = useState("");
   const [editDescription, setEditDescription] = useState("");
   const [editId, setEditId] = useState("");
   const [editDueDate, setEditDueDate] = useState("");
-  const [editPriority, setEditPriority] = useState(""); 
+  const [editPriority, setEditPriority] = useState("");
+
+  const handleSonner = () => {
+    toast.success("ToDo has been Edit");
+  };
+
+  const handleDelete = (id: string) => {
+    dispatch(removeTodo(id));
+    toast.error(
+      <div>
+        <p>ToDo {id} has been deleted</p>
+      </div>
+    );
+  };
+
+  
 
   return (
     <div className="todo-div">
-        <h2 style={{ color: "white" }}>Todo List</h2>
+      <h2 style={{ color: "white" }}>Todo List</h2>
       {todos.map((todo) => (
         <div className="todo-card" key={todo.id}>
           <h3 style={{ color: "white" }}>{todo.title}</h3>
@@ -25,7 +44,9 @@ const TodoList = () => {
           <p style={{ color: "white" }}>
             Status: {todo.completed ? "Completed" : "Pending"}
           </p>
-          <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+          <div
+            style={{ display: "flex", justifyContent: "center", gap: "20px" }}
+          >
             <button
               className="login-form-button"
               onClick={() => {
@@ -40,7 +61,7 @@ const TodoList = () => {
 
             <button
               className="login-form-button"
-              onClick={() => dispatch(removeTodo(todo.id))}
+              onClick={() => handleDelete(todo.id)}
             >
               Delete
             </button>
@@ -92,13 +113,17 @@ const TodoList = () => {
                   value={editPriority}
                   onChange={(e) => setEditPriority(e.target.value)}
                 >
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
                 </select>
                 <br />
 
-                <button type="submit" className="login-form-button">
+                <button
+                  type="submit"
+                  className="login-form-button"
+                  onClick={handleSonner}
+                >
                   Save
                 </button>
                 <button
