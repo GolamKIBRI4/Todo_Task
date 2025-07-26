@@ -1,9 +1,14 @@
 import { FormEvent, useState } from "react";
-import { useDispatch } from "react-redux";
+
 import { addTodo } from "../features/todo/todoSlice";
 import { Todo } from "../types/interfaces";
 import TodoList from "./TodoList";
 import { toast } from "sonner";
+import { logout } from "../features/auth/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+import { RootState } from "../store/store";
+import { useNavigate } from "react-router-dom";
 
 
 const createEmptyTodo = (): Todo => ({
@@ -16,10 +21,16 @@ const createEmptyTodo = (): Todo => ({
 });
 
 const Todos = () => {
+
+      const navigate= useNavigate();
+    const dispatch =useDispatch(); 
+    const token = useSelector((state: RootState) => state.auth.token);
+    if(!token) {
+        navigate("/");
+    }
+
   const [input, setInput] = useState<Todo>(createEmptyTodo());
   const [formvisibility, setFormVisibility] = useState(false);
-       
-  const dispatch = useDispatch();
 
   const toggleFormVisibility = () => setFormVisibility(!formvisibility);   
 
@@ -42,9 +53,11 @@ const Todos = () => {
   return (
     <>
         <div className="home-page-left-column">
-            <button onClick={toggleFormVisibility} className="login-form-button" >
-                {formvisibility ? "Hide Form" : "Add Todo"}
-            </button>
+            <div style={{ display: "flex", justifyContent:"left", gap: "20px", marginTop: "-20px", marginLeft: "-20px"   }}>
+                <button onClick={toggleFormVisibility} className="login-form-button" >
+                    {formvisibility ? "Hide Form" : "Add Todo"}
+                </button>
+            </div>
                    {formvisibility && (<div className="login-div">
                <form onSubmit={addTodoHandler} className='login-form'>
             
@@ -98,7 +111,10 @@ const Todos = () => {
                    </div>)}
         </div>
         <div className="home-page-right-column">
+            
            <TodoList />
+           <div className="logout-div"><button onClick={() => dispatch(logout())} className="logout-button" >Logout</button></div>
+           
 
         </div>
     </>

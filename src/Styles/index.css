@@ -8,6 +8,7 @@ body, html, #root {
   padding: 0;
   min-height: 100%;
   overflow-x: hidden;
+ 
   font-family: Arial, sans-serif;
   background-color: #000;
 }
@@ -109,6 +110,8 @@ a.active {
   cursor: pointer;
  
   }
+
+
 }
 
 /* Buttons */
@@ -194,7 +197,7 @@ a.active {
 .todo-div {
   max-width: 400px;
   width: 80%;
- 
+  margin-top: 55px!important;
   margin: 20px auto;
   padding: 20px;
   border-radius: 30px;
@@ -210,21 +213,36 @@ a.active {
   width: 95%;
   padding: 20px;
   border-radius: 15px;
+  
 }
 
 .logout-button {
+ 
   background: #101840;
   color: #fff;
   border: 0;
   outline: 0;
-  padding: 12px 25px;   
+  padding: 12px 25px;
+    margin-left: 10px!important;
   cursor: pointer;
  
-   margin-bottom: 95%;
-   margin-top: -20px;
-   margin-right: -20px;
+   justify-content: center;
 }
 
 .logout-button:hover {
   background: black;
+}
+.logout-div {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  
+  width: 30%;
+  display: flex;
+  
+  justify-content: flex-end; /* aligns the logout button to the right */
+  background-color: transparent;
+  
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
