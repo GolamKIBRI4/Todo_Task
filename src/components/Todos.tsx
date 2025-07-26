@@ -58,7 +58,8 @@ const Todos = () => {
                     {formvisibility ? "Hide Form" : "Add Todo"}
                 </button>
             </div>
-                   {formvisibility && (<div className="login-div">
+                   {formvisibility && (<div className="login-div" >
+                    <div> <h2 style={{ color: "white" }}>Add Todo</h2></div>
                <form onSubmit={addTodoHandler} className='login-form'>
             
                     <label htmlFor="todo">Todo</label>
