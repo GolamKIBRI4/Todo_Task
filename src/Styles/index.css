@@ -1,170 +1,127 @@
-.navBar-content{
+:root {
+  --navbar-height: 70px; /* Matches your .navBar height */
+}
+
+/* Reset & Base */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+}
+
+/* NavBar */
+.navBar {
+  position: relative; /* not fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
   width: 100%;
-  
+  z-index: 1000;
+  background-color: #101840;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+.navBar-content {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items:center; 
-  margin-top: 5px;
- 
-  
-    
-  }
-  .navBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: var(--navbar-height);
-    z-index: 1000;
-    background-color: #101840;
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
-    
-  }
-.navBar ul{
-  padding:10px 30px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navBar ul {
+  padding: 10px 30px;
   border-radius: 30px;
   background-color: #E7E4F9;
   box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
 }
 
-.navBar ul li{
+.navBar ul li {
   display: inline-block;
   padding: 5px 10px;
   margin: 0 10px;
- 
 }
-a.active{
+
+a.active {
   color: #10261E;
 }
 
-.navBar button{
+.navBar button {
   background: #000;
- color: #fff;
- padding: 13px 25px;
- border: 0;
- outline: 0;
- border-radius: 35px;
- font-size: 16px;
- cursor: pointer;
- box-shadow:   0 0 30px 0 rgba(0,0,0,0.1);
-
+  color: #fff;
+  padding: 13px 25px;
+  border: 0;
+  outline: 0;
+  border-radius: 35px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
 }
 
+/* App Layout */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 80vh;
-    
+/* Home Page Layout */
+.home-page-layout {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 20px;
+  background-color: #000;
+}
+
+/* Columns */
+.home-page-left-column,
+.home-page-right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #000;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .home-page-layout {
+    flex-direction: column;
   }
 
-
-
-.container.h1{
-  font-size: 70px;
-  font-weight: 500;
+  .home-page-left-column,
+  .home-page-right-column {
+    width: 100%;
+  }
 }
 
-
-
-
-
-
-.btn{
-
+/* Buttons */
+.btn {
   background: #000;
   color: #fff;
   border: 0;
   outline: 0;
   padding: 10px 15px;
   margin-top: 10px;
-
   cursor: pointer;
-
 }
 
-
-
-
-
-:root {
-  --navbar-height: 70px; /* Adjust to your .navBar height */
+.btn:hover {
+  background: #222;
 }
 
-/* Make sure body doesn't scroll */
-body, html, #root {
-  margin: 0;
-  height: 100%;
-  overflow: hidden;
-}
-
-.app-layout {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Layout below NavBar */
-.page-layout {
-  flex: 1; /* take all remaining space below navbar */
-  display: flex;
-  flex-direction: column;
-  margin-top: var(--navbar-height); /* push below navbar */
-  background-color: #000;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-}
-
-.content-container {
-  flex: 1;
-  display: flex;
-  background-color: #000;
-}
-
-
-/* Sidebar (Aside) */
-.sidebar {
-  width: 250px;
-  background-color: #f7f7f7;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-/* Main content */
-.main-content {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-  background-color: #fff;
-  align-items: center;
-  padding: 15%;
-}
-
-/* Optional Responsive Behavior */
-@media (max-width: 768px) {
-  .content-container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    order: 2;
-  }
-
-  .main-content {
-    order: 1;
-  }
-}
+/* Login Page Styles */
 .login-div {
   max-width: 400px;
   width: 80%;
   margin: 20px auto;
   padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
   display: flex;
   align-items: center;
@@ -173,46 +130,73 @@ body, html, #root {
   background-color: #101840; 
   gap: 15px;
 }
+
 .login-div h2 {
   color: black;
   font-size: 30px;
   margin-bottom: 5px;
 }
+
 .login-form {
   width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
-.login-form input {
-  padding: 12px 15px;
 
+.login-form input,
+.login-form select {
+  padding: 12px 15px;
   border-radius: 12px;
   font-size: 16px;
-  width: 100%;
-  resize: none;
+  width: 80%;
   font-family: inherit;
   border: none;
-  background-color: 
-#E7E4F9;
+  background-color: #E7E4F9;
 }
+
+.login-form select:focus,
 .login-form input:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(16, 24, 64, 0.5);
 }
+
+.login-form select option {
+  background-color: #101840;
+  color: #fff;
+}
+
 .login-form-button {
   background: #101840;
   color: #fff;
   border: 0;
   outline: 0;
   padding: 12px 25px;   
+  cursor: pointer;
 }
+
 .login-form-button:hover {
   background: black;
-  cursor: pointer;
-  
+}
+
+.todo-div {
+  max-width: 400px;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: #101840 0 0 30px;
+  background-color: rgb(17, 17, 17); 
+}
+.todo-card {
+  background-color: #101840;
+  margin-bottom: 5px;
+  width: 95%;
+  padding: 20px;
+  border-radius: 15px;
 }
