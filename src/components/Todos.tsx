@@ -36,7 +36,7 @@ const Todos = () => {
   return (
     <>
         <div className="home-page-left-column">
-            <button onClick={toggleFormVisibility} className="login-form-button">
+            <button onClick={toggleFormVisibility} className="login-form-button" >
                 {formvisibility ? "Hide Form" : "Add Todo"}
             </button>
                    {formvisibility && (<div className="login-div">

@@ -18,7 +18,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="login-div">
+    <div className="login-div" style={{ marginTop: '150px' }}>
         <h2 >Login</h2>
       <form onSubmit={handleLogin} className='login-form'>
         

@@ -99,6 +99,16 @@ a.active {
   .home-page-right-column {
     width: 100%;
   }
+  .logout-button{
+  background: #101840;
+  color: #fff;
+  border: 0; 
+  outline: 0;
+  width: 100%;
+  
+  cursor: pointer;
+ 
+  }
 }
 
 /* Buttons */
@@ -184,6 +194,7 @@ a.active {
 .todo-div {
   max-width: 400px;
   width: 80%;
+ 
   margin: 20px auto;
   padding: 20px;
   border-radius: 30px;
@@ -199,4 +210,21 @@ a.active {
   width: 95%;
   padding: 20px;
   border-radius: 15px;
+}
+
+.logout-button {
+  background: #101840;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  padding: 12px 25px;   
+  cursor: pointer;
+ 
+   margin-bottom: 95%;
+   margin-top: -20px;
+   margin-right: -20px;
+}
+
+.logout-button:hover {
+  background: black;
 }

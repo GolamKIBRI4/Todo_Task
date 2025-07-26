@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <HomePageLayout>
         <Todos />
-      <button onClick={() => dispatch(logout())} className="login-form-button">Logout</button>
+      <button onClick={() => dispatch(logout())} className="logout-button" >Logout</button>
     </HomePageLayout>
   );
 };

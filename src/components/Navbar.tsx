@@ -9,7 +9,7 @@ const Navbar = () => {
      
   return (
     <NavbarContentWrapper>
-        <img style={{ width: "60px", height: "auto"  }} src={logo}></img>
+        <img style={{ width: "50px", height: "auto", marginTop:"10px"  }} src={logo}></img>
     </NavbarContentWrapper>
   )
 }
