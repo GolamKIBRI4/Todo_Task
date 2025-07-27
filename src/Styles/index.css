@@ -8,7 +8,6 @@ body, html, #root {
   padding: 0;
   min-height: 100%;
   overflow-x: hidden;
- 
   font-family: Arial, sans-serif;
   background-color: #000;
 }
@@ -90,19 +89,6 @@ a.active {
   background-color: #000;
 }
 
-/* Responsive layout */
-@media (max-width: 768px) {
-  .home-page-layout {
-    flex-direction: column;
-  }
-
-  .home-page-left-column,
-  .home-page-right-column {
-    width: 100%;
-  }
-
-}
-
 /* Buttons */
 .btn {
   background: #000;
@@ -119,6 +105,178 @@ a.active {
 }
 
 /* Login Page Styles */
+.login-page-container {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 20px;
+  background-color: yellow;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-text {
+  background-color: white;
+  max-width: 400px;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: #101840 0 0 30px;
+  gap: 15px;
+  justify-content: center;
+}
+
+.login-div {
+  max-width: 400px;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: #101840 0 0 30px;
+  background-color: #101840;
+  gap: 15px;
+  justify-content: center;
+}
+
+.login-div h2 {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.login-form input,
+.login-form select {
+  padding: 12px 15px;
+  border-radius: 12px;
+  font-size: 16px;
+  width: 80%;
+  font-family: inherit;
+  border: none;
+  background-color: #E7E4F9;
+}
+
+.login-form select {
+  width: 89.85%;
+}
+
+.login-form select:focus,
+.login-form input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(16, 24, 64, 0.5);
+}
+
+.login-form select option {
+  background-color: #101840;
+  color: #fff;
+}
+
+.login-form-button {
+  background: #101840;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  padding: 12px 25px;
+  cursor: pointer;
+}
+
+.login-form-button:hover {
+  background: black;
+}
+.page-layout{
+    margin-bottom: 10px;
+}
+
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .home-page-layout {
+    flex-direction: column;
+  }
+
+.page-layout{
+    margin-top: -40px;
+}
+
+  .home-page-left-column,
+  .home-page-right-column {
+    width: 100%;
+  }
+
+
+  .login-text,
+  .login-div {
+    width: 100%;
+    max-width: 400px;
+    margin: 0; /* remove margins for better alignment */
+  }
+
+  .login_text_div{
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 400px; 
+    
+    
+  }
+  
+}
+
+
+/* Buttons */
+.btn {
+  background: #000;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #222;
+}
+
+.login_text_div{
+   
+  max-width: 400px;
+  width: 80%;
+  
+ margin: 20px auto;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-right: px;
+  
+  
+  gap: 5px;
+  
+ 
+}
+.login_text{
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+  
+}
 .login-div {
   max-width: 400px;
   width: 80%;
@@ -131,6 +289,11 @@ a.active {
   box-shadow: #101840 0 0 30px;
   background-color: #101840; 
   gap: 15px;
+  justify-content: center;
+ 
+  
+
+  
 }
 
 .login-div h2 {
