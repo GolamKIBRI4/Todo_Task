@@ -30,11 +30,14 @@ const TodoList = () => {
     );
   };
 
-  
+
 
   return (
     <div className="todo-div">
       <h2 style={{ color: "white" }}>Todo List</h2>
+      {todos.length === 0 && <div>
+          <p style={{ color: "white" }}>empty</p>
+      </div>}
       {todos.map((todo) => (
         <div className="todo-card" key={todo.id}>
           <h3 style={{ color: "white" }}>{todo.title}</h3>

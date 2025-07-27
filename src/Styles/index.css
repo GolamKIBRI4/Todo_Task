@@ -360,7 +360,7 @@ a.active {
   align-items: center;
   flex-direction: column;
   box-shadow: #101840 0 0 30px;
-  background-color: rgb(17, 17, 17); 
+  background-color: #696f8c; 
 }
 .todo-card {
   background-color: #101840;
